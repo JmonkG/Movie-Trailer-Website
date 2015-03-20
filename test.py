@@ -1,5 +1,5 @@
 from movie import Movie
-import fresh_tomatoes
+"""import fresh_tomatoes"""
 
 m = Movie('Prueba','http:','http2:',20,'Comedy','fun',1994,'me')
 m.add_actors(['melina','mariloli','josue','diana','walter'])
