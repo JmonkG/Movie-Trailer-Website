@@ -3,8 +3,8 @@ class Movie(object):
     """ A simpler movie Class """
     def __init__(self,mov_title,posterURL,youlink,runtime,genre,description,year,director):
         self.title = mov_title
-        self.posURL = posterURL
-        self.ylink = youlink
+        self.poster_image_url = posterURL
+        self.trailer_youtube_url = youlink
         self.actors = []
         self.runtime = runtime
         self.genre = genre
