@@ -1,5 +1,9 @@
 from movie import Movie
-#from fresh_tomatoes import *
+from fresh_tomatoes import *
+list_movies = []
+movie_file = open("movies.txt","r")
 
-m = open("")
-#open_movies_page(m)
+for line in movie_file:
+    list_movies.append(Movie(line.split(',')))
+    
+open_movies_page(list_movies)
