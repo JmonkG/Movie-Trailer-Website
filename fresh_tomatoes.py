@@ -40,7 +40,7 @@ main_page_head = '''
             background-color: #99CCFF;          /* Change the color of the background for each movie*/
             cursor: pointer;
         }
-        .scale-media {
+        .scale-media }
             padding-bottom: 56.25%;
             position: relative;
         }
@@ -121,9 +121,11 @@ main_page_content = '''
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+    <h2 class="color: #ff0000">{movie_title}</h2>
     <!-- this are added fields from the data structure -->
-    <h3>{movie_genre}</h3>
+    <h4>{movie_genre}</h4>
+    <h4>{director}</h4>
+    <h4>{runtime}</h4>
 </div>
 '''
 
@@ -141,7 +143,9 @@ def create_movie_tiles_content(movies):
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id,
-            movie_genre = movie.genre
+            movie_genre = '<b>Genre:</b>' +' '+movie.genre,
+            director = '<b>Director:</b>' + ' '+movie.director,
+            runtime = '<b>Duration:</b>'+' '+movie.runtime +' '+'mins.'
         )
     return content
 
