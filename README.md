@@ -1,6 +1,5 @@
 #1rst Proyect for Full Stack Web Developer Nanodegree
-
---------Movie Trailer Website-----------------------
+#Movie Trailer Website
 
 The project has 4 files:
 fresh_tomatoes.py .- Contains the html css and javascript code to run the page
