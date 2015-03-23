@@ -1,18 +1,11 @@
+''' The class Movie represents and object called Movie.
+    As it is expected, it has fields such as title, poster and trailer URL.
+    In order to go a little further, I add the fields runtime, the duration of the movie
+    its genre, the year it was presented, the director and for further information, a link to the imdb website
+    for the movie
+'''
 class Movie(object):
-    
-    """ A simpler movie Class """
-    def __init__(self,mov_title,posterURL,youlink,runtime,genre,description,year,director):
-        self.title = mov_title
-        self.poster_image_url = posterURL
-        self.trailer_youtube_url = youlink
-        self.actors = []
-        self.runtime = runtime
-        self.genre = genre
-        self.description = description
-        self.year = year
-        self.director = director
-        self.tags = []
-    
+    # Defined a constructor for a Movie Object, where the attributes of the object are taken from a List called movie_params_list.
     def __init__(self, movie_params_list):
         self.title = movie_params_list[0]
         self.poster_image_url = movie_params_list[1]
@@ -21,12 +14,6 @@ class Movie(object):
         self.genre = movie_params_list[4]
         self.year = movie_params_list[5]
         self.director = movie_params_list[6]
-
-
-    def add_actors(self,performers):
-        self.actors = performers
-    
-    def add_movie_tags(self,indexs):
-        self.tags = indexs
+        self.imdb_information = movie_params_list[7]
 
 

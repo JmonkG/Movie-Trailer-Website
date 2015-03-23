@@ -126,6 +126,7 @@ movie_tile_content = '''
     <h4>{movie_genre}</h4>
     <h4>{director}</h4>
     <h4>{runtime}</h4>
+    <a href='{more_info}' target="_blank">IMDB profile</a>
 </div>
 '''
 
@@ -138,14 +139,16 @@ def create_movie_tiles_content(movies):
         youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
         trailer_youtube_id = youtube_id_match.group(0) if youtube_id_match else None
 
-        # Append the tile for the movie with its content filled in
+        # Append the tile for the movie with its content filled in.
         content += movie_tile_content.format(
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id,
+            #This parameters where attached to complete each movie profile
             movie_genre = '<b>Genre:</b>' +' '+movie.genre,
             director = '<b>Director:</b>' + ' '+movie.director,
-            runtime = '<b>Duration:</b>'+' '+movie.runtime +' '+'mins.'
+            runtime = '<b>Duration:</b>'+' '+movie.runtime +' '+'mins.',
+            more_info = movie.imdb_information
         )
     return content
 
